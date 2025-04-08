@@ -51,8 +51,9 @@ header .container {
 
 .logo h1 {
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
+    margin: 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
