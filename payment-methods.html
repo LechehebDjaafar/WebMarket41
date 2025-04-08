@@ -2,14 +2,22 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>طرق الدفع - Moh Market 41</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/payment-methods.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="logo">
                 <h1>Moh Market 41</h1>
             </div>
@@ -30,7 +38,7 @@
         
         <div class="payment-method-details">
             <div class="method-detail">
-                <img src="images/bridi.jpg" alt="بريدي موب">
+                <img src="images/bridi.jpg" alt="بريدي موب" loading="lazy">
                 <h3>بريدي موب</h3>
                 <p>خدمة الدفع الإلكتروني من بريد المغرب</p>
                 <div class="instructions">
@@ -48,7 +56,7 @@
             </div>
 
             <div class="method-detail">
-                <img src="images/flixy.jpg" alt="فلكسي">
+                <img src="images/flixy.jpg" alt="فلكسي" loading="lazy">
                 <h3>فلكسي</h3>
                 <p>خدمة الدفع عبر الهاتف المحمول</p>
                 <div class="instructions">
@@ -95,7 +103,6 @@
         </div>
     </footer>
 
-    <script src="js/payment-methods.js">
-    </script>
+    <script src="js/payment-methods.js"></script>
 </body>
 </html>
