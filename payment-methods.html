@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طرق الدفع - Moh Market 41</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #367dad;
+
+            --accent-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --gradient: linear-gradient(135deg, #3498db, #2980b9);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f4f7fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--gradient);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        nav ul li.active a {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+        
+        main h2 {
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        main h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        /* Payment Methods */
+        .payment-method-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .method-detail {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .method-detail:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .method-detail img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .method-detail h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            padding: 20px 20px 10px;
+        }
+        
+        .method-detail > p {
+            color: #666;
+            padding: 0 20px 15px;
+            font-size: 0.95rem;
+        }
+        
+        .instructions {
+            padding: 0 20px 20px;
+        }
+        
+        .instructions h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .instructions h4::before {
+            content: '\f041';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            margin-left: 8px;
+            color: var(--accent-color);
+        }
+        
+        .instructions ol {
+            margin-right: 20px;
+        }
+        
+        .instructions ol li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-right: 5px;
+        }
+        
+        .instructions ol li::marker {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin-top: 30px;
+        }
+        
+        .faq h3 {
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .faq h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .faq-question {
+            background: none;
+            border: none;
+            color: var(--dark-color);
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 15px 0;
+            text-align: right;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question::after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active::after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.show {
+            max-height: 200px;
+            padding-bottom: 15px;
+        }
+        
+        .faq-answer p {
+            color: #666;
+            padding: 0 0 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .method-detail {
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .method-detail, .faq {
+            animation: fadeIn 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Moh Market 41</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="games.html">الألعاب والتطبيقات</a></li>
+                    <li><a href="recharge.html">الشحن</a></li>
+                    <li class="active"><a href="payment-methods.html">طرق الدفع</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>طرق الدفع المتاحة</h2>
+        
+        <div class="payment-method-details">
+            <div class="method-detail">
+                <img src="images/bridi.jpg" alt="بريدي موب">
+                <h3>بريدي موب</h3>
+                <p>خدمة الدفع الإلكتروني من بريد المغرب</p>
+                <div class="instructions">
+                    <h4>كيفية الدفع عبر بريدي موب:</h4>
+                    <ol>
+                        <li>قم بتسجيل الدخول إلى حسابك في بريدي موب</li>
+                        <li>اختر "تحويل الأموال"</li>
+                        <li>أدخل رقم الحساب المقدم في صفحة الشحن</li>
+                        <li>أدخل المبلغ المطلوب</li>
+                        <li>أكمل عملية التحويل</li>
+                        <li>احفظ إيصال التحويل أو التقط صورة له</li>
+                        <li>ارفع صورة الإيصال في صفحة الشحن</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="method-detail">
+                <img src="images/flixy.jpg" alt="فلكسي">
+                <h3>فلكسي</h3>
+                <p>خدمة الدفع عبر الهاتف المحمول</p>
+                <div class="instructions">
+                    <h4>كيفية الدفع عبر فلكسي:</h4>
+                    <ol>
+                        <li>افتح تطبيق فلكسي على هاتفك</li>
+                        <li>اختر "إرسال أموال"</li>
+                        <li>أدخل رقم الهاتف المقدم في صفحة الشحن</li>
+                        <li>أدخل المبلغ المطلوب</li>
+                        <li>أكمل عملية التحويل</li>
+                        <li>احفظ إيصال التحويل أو التقط صورة له</li>
+                        <li>ارفع صورة الإيصال في صفحة الشحن</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h3>أسئلة شائعة</h3>
+            <div class="faq-item">
+                <button class="faq-question">كم تستغرق عملية الشحن؟</button>
+                <div class="faq-answer">
+                    <p>تستغرق عملية الشحن عادةً من 15 دقيقة إلى 24 ساعة كحد أقصى بعد تأكيد الدفع.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">ماذا لو لم يصل الرصيد؟</button>
+                <div class="faq-answer">
+                    <p>في حال لم يصلك الرصيد خلال 24 ساعة، يرجى التواصل معنا عبر صفحة "اتصل بنا" مع تقديم إيصال الدفع.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">هل يمكنني استرداد المال؟</button>
+                <div class="faq-answer">
+                    <p>نعم، في حال لم تكتمل عملية الشحن، يمكنك طلب استرداد المال خلال 7 أيام من تاريخ الدفع.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Moh Market 41. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // Toggle active class on the question
+                    this.classList.toggle('active');
+                    
+                    // Toggle show class on the answer
+                    const answer = this.nextElementSibling;
+                    if (answer.classList.contains('show')) {
+                        answer.classList.remove('show');
+                    } else {
+                        answer.classList.add('show');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

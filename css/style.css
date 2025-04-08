@@ -1,0 +1,764 @@
+/* الأساسيات */
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: #ff6b4a;
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #f9f9f9;
+    direction: rtl;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #3a56d4;
+    transform: translateY(-2px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* الهيدر */
+header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: var(--dark-color);
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover, 
+nav ul li.active a {
+    color: var(--primary-color);
+}
+
+/* الصفحة الرئيسية */
+.hero {
+    text-align: center;
+    padding: 60px 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.feature {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature i {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.payment-methods {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.payment-methods h2 {
+    margin-bottom: 30px;
+}
+
+.methods {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.method {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    width: 150px;
+    transition: all 0.3s ease;
+}
+
+.method:hover {
+    transform: translateY(-5px);
+}
+
+.method img {
+    height: 50px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.how-it-works {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 50px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.how-it-works h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.how-it-works ol {
+    padding-right: 20px;
+}
+
+.how-it-works li {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* صفحة الألعاب */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.game-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+    padding: 20px;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.game-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.game-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.game-card p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.categories {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 8px 15px;
+    background: #eee;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-btn.active, 
+.category-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* صفحة الشحن */
+.recharge-steps {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+    position: relative;
+}
+
+.recharge-steps::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background: #eee;
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.step span {
+    width: 40px;
+    height: 40px;
+    background: #eee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #999;
+}
+
+.step p {
+    font-size: 14px;
+    color: #999;
+}
+
+.step.active span {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.step.active p {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.recharge-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+}
+
+.recharge-form h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.offers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.offer input {
+    display: none;
+}
+
+.offer label {
+    display: block;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.offer input:checked + label {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.offer label:hover {
+    background: #eee;
+}
+
+.offer input:checked + label:hover {
+    background: #3a56d4;
+}
+
+.amount {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.prev-step {
+    background: #eee;
+    color: var(--dark-color);
+}
+
+.prev-step:hover {
+    background: #ddd;
+}
+
+.payment-options {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.payment-option input {
+    display: none;
+}
+
+.payment-option label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.payment-option input:checked + label {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.payment-option img {
+    height: 30px;
+}
+
+.payment-details {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.payment-details h4 {
+    margin-bottom: 15px;
+}
+
+.account-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 10px 0;
+    direction: ltr;
+    text-align: center;
+}
+
+.summary {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.confirmation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.confirmation input {
+    width: auto;
+}
+
+/* صفحة طرق الدفع */
+.payment-method-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.method-detail {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.method-detail img {
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.method-detail h3 {
+    margin-bottom: 10px;
+}
+
+.instructions {
+    margin-top: 20px;
+}
+
+.instructions h4 {
+    margin-bottom: 15px;
+}
+
+.instructions ol {
+    padding-right: 20px;
+}
+
+.instructions li {
+    margin-bottom: 10px;
+}
+
+.faq {
+    margin: 50px 0;
+}
+
+.faq h3 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 15px 20px;
+    background: #f9f9f9;
+    border: none;
+    text-align: right;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 20px;
+}
+
+.faq-question.active::after {
+    content: '-';
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+    padding: 15px 0;
+}
+
+.faq-question.active + .faq-answer {
+    max-height: 200px;
+}
+
+/* صفحة التواصل */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.contact-info {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    font-size: 20px;
+    color: var(--primary-color);
+    width: 30px;
+    text-align: center;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form h3 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* الفوتر */
+footer {
+    background: var(--dark-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* المودال */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+.modal-content i {
+    font-size: 50px;
+    color: var(--success-color);
+    margin-bottom: 20px;
+}
+
+.modal-content h3 {
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+}
+
+/* التجاوب */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 15px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .recharge-steps {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .step {
+        width: calc(50% - 10px);
+    }
+
+    .recharge-steps::before {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    .step {
+        width: 100%;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+}
